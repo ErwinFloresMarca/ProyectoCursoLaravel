@@ -10,6 +10,8 @@ $factory->define(Persona::class, function (Faker $faker) {
         'apellido' => $faker->lastName, // 123456
         'ci' => $faker->randomDigit,
         'celular' => $faker->randomDigit, // 123456
-        'user_id' => 
+        'user_id' => function(){
+            return factory(App\User::class)->create()->id;
+        }
     ];
 });
